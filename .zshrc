@@ -1,10 +1,9 @@
 # If you come from bash you might have to change your $PATH.
  export PATH=$HOME/bin:/usr/local/bin:$HOME/Programs/CLion-2017.2.1/clion-2017.2.1/bin:$PATH
-
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/raf/.oh-my-zsh
+export ZSH=/home/raf/.oh-my-zsh
 
-  ZSH=$HOME/.oh-my-zsh
+ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes awesomepanda
@@ -71,9 +70,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
  if [[ -n $SSH_CONNECTION ]]; then
-   export EDITOR='nano'
+   export EDITOR='vim'
  else
-   export EDITOR='nano'
+   export EDITOR='vim'
  fi
 
 # Compilation flags

@@ -8,4 +8,6 @@ convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
 #convert "$tmpbg"  -gravity center -composite -matte "$tmpbg"
 i3lock  -i "$tmpbg"
 
-sleep 60; pgrep i3lock && xset dpms force off
+sleep 120
+
+pgrep i3lock && xset dpms force off
