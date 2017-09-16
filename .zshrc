@@ -114,3 +114,5 @@ alias do="cd ~/Documents"
 alias st="cd ~/Documents/studia"
 alias dock="cd /mnt/Ultra_Base"
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+alias v="vim"
+

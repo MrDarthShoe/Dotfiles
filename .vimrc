@@ -4,32 +4,64 @@ set nobackup                  " Don't keep backup file
 set clipboard=unnamed        " Yank and paste with the system clipboard
 set cursorline
 set number
-set relativenumber
 set cursorcolumn
 set so=7
-
+filetype plugin on
 syntax enable
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
 
 call plug#begin()
 
 Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
-"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'ctrlpvim/ctrlp.vim'
 "Plug 'jlanzarotta/bufexplorer'
 
 call plug#end()
 
 "change mapleader
 let mapleader=","
+
+"Easy change one character
+nnoremap <Space> cl
+
+"Automatic two brackets
+inoremap ( ()<Esc>T(i
+inoremap { {}<Esc>T{i
+inoremap [ []<Esc>T[i
+
+"NerdTree settings
 nmap <leader>m :NERDTreeToggle<CR>
 let NERDTreeHighlightCursorline=1
 let NERDTreeIgnore = ['tmp', '.yardoc']
+nmap <leader>r :NERDTreeFind<CR>
 
-"List last opened files
-nmap <leader>l :browse oldfiles<CR>
+"YoucompleteMe 
+nnoremap <leader>jj :YcmCompleter GoTo<CR>
+nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
+nnoremap <leader>jt :YcmCompleter GetType<CR>
+nnoremap <leader>jf :YcmCompleter FixIt<CR>
 
-"Easy buffet navigation?
-nmap <leader>b :buffers<CR>:buffer<Space>
+
+"Move lines around:
+nnoremap <M-j> :m .+1<CR>==
+nnoremap <M-k> :m .-2<CR>==
+inoremap <M-j> <Esc>:m .+1<CR>==gi
+inoremap <M-k> <Esc>:m .-2<CR>==gi
+vnoremap <M-j> :m '>+1<CR>gv=gv
+vnoremap <M-k> :m '<-2<CR>gv=gv
+
+let g:tex_flavor = "latex"
 
 "Easy window navigation
 map <C-h> <C-w>h
@@ -41,10 +73,13 @@ colorscheme gruvbox
 set background=dark
 
 "CtrlP
-"let g:ctrlp_map = '<c-p>'  
-"let g:ctrlp_cmd = 'CtrlP'  
-"let g:ctrlp_working_path_mode = 'ra' 
-"let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_map = '<c-p>'  
+let g:ctrlp_cmd = 'CtrlP'  
+let g:ctrlp_working_path_mode = 'ra' 
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_show_hidden = 1
+nmap <leader>l :CtrlPMRU<CR>
+nmap <leader>b :CtrlPBuffer<CR>
 
 "Working with buffers      
 set hidden                 
@@ -54,5 +89,3 @@ nnoremap bd :bdelete<CR>
 nnoremap bl :BufExplorer<CR>
 nnoremap bl :buffers<CR>:buffer<Space>
 
-" easy opening files:
-nmap <leader>e :!ls<CR>:e
