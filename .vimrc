@@ -1,17 +1,17 @@
 language en_US.UTF-8
 set nocompatible              " be iMproved, required                                                              
-set nobackup                  " Don't keep backup file
 set clipboard=unnamed        " Yank and paste with the system clipboard
-set cursorline
+"set cursorline
 set number
-set cursorcolumn
-set so=7
+set so=12
 filetype plugin on
 syntax enable
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set noexpandtab
+set ignorecase
+set smartcase
 
 execute "set <M-j>=\ej"
 execute "set <M-k>=\ek"
@@ -46,8 +46,8 @@ nmap <leader>r :NERDTreeFind<CR>
 
 "YoucompleteMe 
 nnoremap <leader>jj :YcmCompleter GoTo<CR>
-nnoremap <leader>jd :YcmCompleter GoToDeclaration<CR>
-nnoremap <leader>jf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>jdc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>jdf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>ji :YcmCompleter GoToInclude<CR>
 nnoremap <leader>jt :YcmCompleter GetType<CR>
 nnoremap <leader>jf :YcmCompleter FixIt<CR>
@@ -87,5 +87,5 @@ nnoremap bn :bnext<CR>
 nnoremap bp :bprev<CR>     
 nnoremap bd :bdelete<CR>   
 nnoremap bl :BufExplorer<CR>
-nnoremap bl :buffers<CR>:buffer<Space>
+"nnoremap bl :buffers<CR>:buffer<Space>
 
