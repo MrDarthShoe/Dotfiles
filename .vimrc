@@ -23,6 +23,7 @@ Plug 'morhetz/gruvbox'
 Plug 'Valloric/YouCompleteMe'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'scrooloose/nerdcommenter'
 "Plug 'jlanzarotta/bufexplorer'
 
 call plug#end()
@@ -37,6 +38,7 @@ nnoremap <Space> cl
 inoremap ( ()<Esc>T(i
 inoremap { {}<Esc>T{i
 inoremap [ []<Esc>T[i
+inoremap " ""<Esc>T"i
 
 "NerdTree settings
 nmap <leader>m :NERDTreeToggle<CR>
@@ -86,6 +88,6 @@ set hidden
 nnoremap bn :bnext<CR>     
 nnoremap bp :bprev<CR>     
 nnoremap bd :bdelete<CR>   
-nnoremap bl :BufExplorer<CR>
+"nnoremap bl :BufExplorer<CR>
 "nnoremap bl :buffers<CR>:buffer<Space>
 

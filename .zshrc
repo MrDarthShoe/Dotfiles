@@ -2,6 +2,7 @@
  export PATH=$HOME/bin:/usr/local/bin:$HOME/Programs/CLion-2017.2.1/clion-2017.2.1/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH=/home/raf/.oh-my-zsh
+export LANG=en_US.utf8
 
 ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
