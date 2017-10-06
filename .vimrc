@@ -32,7 +32,8 @@ call plug#end()
 let mapleader=","
 
 "Easy change one character
-nnoremap <Space> cl
+nnoremap <C-@> cl
+nnoremap <Space> i<Space>
 
 "Automatic two brackets
 inoremap ( ()<Esc>T(i
