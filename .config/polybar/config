@@ -14,7 +14,7 @@ fixed-center = true
 font-0 = xft:Hack:pixelsize=9
 #
 modules-left = i3
-modules-center = cpu memory temperature battery powermenu 
+modules-center = cpu memory temperature battery filesystem powermenu 
 modules-right = date 
 
 scroll-up = i3wm-wsnext
@@ -107,7 +107,7 @@ type = internal/battery
 
 full-at = 98
 
-time-format = %H:%M
+time-format = %H:%M 
 
 battery = BAT0
 adapter = AC
@@ -127,7 +127,19 @@ label-charging = %percentage%% (%time%)
 
 label-discharging = %percentage%% (%time%) 
 
-label-full = %percentage%%
+label-full = %percentage%% 
+
+
+[module/filesystem]
+type = internal/fs
+
+mount-0 = /
+mount-1 = /home
+interval = 30
+fixed-values = true
+format-mounted - <label-mounted>
+label-mounted = %mountpoint% %percentage_free%% 
+format-padding = 2
 
 
 ;[module/backlight]

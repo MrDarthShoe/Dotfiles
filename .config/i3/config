@@ -27,6 +27,21 @@ bindsym $mod+Return exec --no-startup-id urxvt
 
 # bindsym $mod+q kill
 bindsym $mod+Shift+q kill
+# set $close "Close the window? (y/n)"
+
+# mode $close {
+#     bindsym y kill, mode default
+#     bindsym Return kill, mode default
+
+#     bindsym n mode default
+#     bindsym Escape mode default
+# }
+
+# bindsym $mod+Shift+q mode $close
+
+
+
+
 # start dmenu (a program launcher)
 
 #bindsym $mod+d exec dmenu_run
@@ -111,6 +126,9 @@ bindsym $mod+Shift+0 move container to workspace 10
 
 #MY CONFIGURATION COOOORVY:
 
+bindsym $mod+Shift+n move workspace to output left
+bindsym $mod+Shift+m move workspace to output right
+bindsym $mod+x move container to output VGA1
 
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 10
@@ -121,13 +139,15 @@ bindsym XF86AudioMute exec amixer -q sset Master toggle
 
 #Skróty do programów:
 
-bindsym Print exec --no-startup-id xfce4-screenshooter -fmc &
+bindsym Print exec --no-startup-id xfce4-screenshooter -rms ~/Pictures/screenshots &
 
 bindsym $mod+Shift+f exec --no-startup-id nautilus
 bindsym $mod+c exec --no-startup-id qalculate-gtk
-bindsym $mod+Shift+w exec --no-startup-id chromium --process-per-site
+bindsym $mod+Shift+w exec --no-startup-id google-chrome-stable --process-per-site
+bindsym $mod+Shift+e exec --no-startup-id emacs &
 
 bindsym XF86ScreenSaver exec --no-startup-id sh /home/raf/bin/lock.sh &
+bindsym $mod+Ctrl+l exec --no-startup-id sh /home/raf/bin/lock.sh &
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -170,16 +190,18 @@ bindsym $mod+r mode "resize"
 #	position top
 #	workspace_buttons yes
 #	status_command ~/./config/polybar/launch.sh
-##	font pango:Inconsolata 10
+##	font pango:Inconsolata 10xf
 #	position top
 #       
 #	status_command ~/.config/i3/bumblebee-status/bumblebee-status -m amixer memory disk:/ disk weather cpu sensors battery date time -p disk.path=/home/raf/  time.format="%H:%M" date.format="%a %b %d %Y" -t solarized-powerline
 #}
 
+# exec --no-startup-id sudo ntpdate -u 0.europe.pool.ntp.org &
+exec --no-startup-id sudo /home/raf/bin/powertop-fix
 exec --no-startup-id rfkill block bluetooth
 exec --no-startup-id nm-applet
 exec --no-startup-id xset -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 exec --no-startup-id sh ~/.fehbg
 exec --no-startup-id xautolock -time 10 -locker ' ./home/raf/bin/lock.sh ' &
-exec --no-startup-id xfce4-clipman &
+exec --no-startup-id parcellite &
