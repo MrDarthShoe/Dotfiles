@@ -6,7 +6,7 @@ alias ..='cd ..'
 alias gss='git status -s'
 alias gad='git add'
 alias gdif='git diff'
-alias glo='git log --decorate --graph -10 --pretty="format:%C(auto,yellow)%h %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN %C(auto,red)% gD% D %C(auto,reset)%s"'
+alias glo='git log --decorate --date=relative --graph -10 --pretty="format:%C(auto,yellow)%h %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN %C(auto,red)% gD% D %C(auto,reset)%s"'
 alias gco="git checkout"
 alias gcmsg='git commit -m'
 alias grbi='git rebase -i'
