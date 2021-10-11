@@ -106,22 +106,5 @@ PS1="%B%{$fg[red]%}[%{$fg[green]%}%n %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_col
 
 ######################################################################
 # Aliases
+source .aliases
 
-alias ls='ls --color=auto'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias ..='cd ..'
-
-alias gss='git status -s'
-alias gad='git add'
-alias gdif='git diff'
-alias glo='git log --decorate --date=relative --graph -10 --pretty="format:%C(auto,yellow)%h %C(auto,blue)%>(12,trunc)%ad %C(auto,green)%<(7,trunc)%aN %C(auto,red)% gD% D %C(auto,reset)%s"'
-alias gco="git checkout"
-alias gcmsg='git commit -m'
-alias grbi='git rebase -i'
-alias gpl='git pull --rebase'
-alias gps='git push'
-alias gcl='git clean -fdx'
-
-alias v='nvim'
