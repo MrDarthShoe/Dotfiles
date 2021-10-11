@@ -19,3 +19,6 @@ alias gcl='git clean -fdx'
 
 alias v='nvim'
 alias vim='nvim'
+
+# Distro- specific
+alias upd='sudo apt-get update && sudo apt-get upgrade'
