@@ -108,3 +108,8 @@ PS1="%B%{$fg[red]%}[%{$fg[green]%}%n %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_col
 # Aliases
 source .aliases
 
+######################################################################
+# Cargo
+source $HOME/.cargo/env
+
+

@@ -22,3 +22,7 @@ alias vim='nvim'
 
 # Distro- specific
 alias upd='sudo apt-get update && sudo apt-get upgrade'
+
+# Rust
+alias ct='cargo test'
+
