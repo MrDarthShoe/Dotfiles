@@ -38,7 +38,7 @@ bindkey -M menuselect 'l' vi-forward-char
 # History in cache directory:
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE=~/.cache/zsh/history
+HISTFILE=$HOME/.cache/zsh/history
 
 ######################################################################
 # Use lf to switch directories and bind it to ctrl-o
